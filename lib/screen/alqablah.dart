@@ -40,7 +40,6 @@ class _QiblaCompassState extends State<Alqablah> {
               case LocationPermission.always:
               case LocationPermission.whileInUse:
                 return QiblahCompassWidget();
-
               case LocationPermission.denied:
                 return LocationErrorWidget(
                   error: "Location service permission denied",
@@ -117,7 +116,7 @@ class QiblahCompassWidget extends StatelessWidget {
                       : Colors.orange),
             ),
             _kaabaSvg,
-            SvgPicture.asset('assets/3.svg', //needle
+            SvgPicture.asset('assets/images/kaapa.png', //needle
                 color: _platformBrightness == Brightness.dark
                     ? Colors.yellow
                     : Colors.orange),

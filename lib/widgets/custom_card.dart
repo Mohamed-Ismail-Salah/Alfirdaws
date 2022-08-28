@@ -1,5 +1,8 @@
-import 'package:alfirdaws/screen/home.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubits/list_data/list_data_cubit.dart';
 
 class CustomCard extends StatelessWidget {
   CustomCard(
@@ -25,9 +28,11 @@ double height ;
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-
 if(nav==true) {
-  Navigator.pushNamed(context, "list_of_data", arguments: {"name": pageTitle});
+
+BlocProvider.of<ListDataCubit>(context).gitpageTitle(pageTitle);
+BlocProvider.of<ListDataCubit>(context).readJson();
+Navigator.pushNamed(context, "list_of_data",);
 }
       },
       child: Padding(
@@ -68,7 +73,7 @@ if(nav==true) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child:   Text(pageTitle,style: TextStyle(
+                    child: Text(pageTitle,style: TextStyle(
                       color: Colors.white
 
                       ,fontSize:fSize,

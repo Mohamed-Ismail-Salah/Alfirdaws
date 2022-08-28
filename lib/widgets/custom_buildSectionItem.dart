@@ -1,32 +1,28 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../cubits/list_data/list_data_cubit.dart';
+class buildSectionItem extends StatelessWidget {
+  int id;
 
-
-class buildSectionItem extends StatefulWidget{
-   String name;
-   String location;
-   var id;
-
+  buildSectionItem({required this.id});
   @override
-   buildSectionItem({required this.name,required this.location,required this.id}){}
-
-  @override
-  State<buildSectionItem> createState() => _buildSectionItemState();
-}
-
-class _buildSectionItemState extends State<buildSectionItem> {
   Widget build(BuildContext context) {
-
-
+    List items=BlocProvider.of<ListDataCubit>(context).items;
+    String? location=BlocProvider.of<ListDataCubit>(context).getlocation_datalist();
 
    return
        GestureDetector(
        onTap: (){
-         Navigator.pushNamed(context, "Display_data",arguments:{"name":widget.name, " location":widget.location,"id":widget.id});
-       },
+         BlocProvider.of<ListDataCubit>(context).gitid(id);
+         if(BlocProvider.of<ListDataCubit>(context).pageTitle=='قران كريم'){
+           Navigator.pushNamed(context, "Quran", );
+         }else{
+           Navigator.pushNamed(context, "Display_data", );
+
+         }
+           },
        child: Padding(
          padding: const EdgeInsets.all(7),
          child: Container(
@@ -48,7 +44,7 @@ class _buildSectionItemState extends State<buildSectionItem> {
                    ])),
            child: Center(
                child: Text(
-                   widget.name  ,
+                 items[id]["name"]  ,
                  style: TextStyle(
                    fontSize: 22.0,
                    fontWeight: FontWeight.bold,

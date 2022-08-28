@@ -24,9 +24,9 @@ class AwaqatAlsalahModle {
 
 
   }
-@override
-  String toString() {
-
-    return super.toString();
-  }
+// @override
+//   String toString() {
+//
+//     return super.toString();
+//   }
 }

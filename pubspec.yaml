@@ -27,11 +27,12 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flutter_qiblah: ^2.0.2
   http:
+  flutter_bloc: ^8.1.1
   intl: ^0.17.0
   flutter_staggered_animations: ^1.0.0
   curved_navigation_bar: ^1.0.3
-  flutter_qiblah:
   geolocator:
   flutter_svg:
   flutter:

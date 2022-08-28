@@ -1,38 +1,26 @@
+import 'dart:async';
 
+import 'package:alfirdaws/cubits/awaqat_alsalah_cubit/awaqat_alsalah_state.dart';
+import 'package:alfirdaws/cubits/awaqat_alsalah_cubit/logc_awaqat_alsalah_cubit.dart';
 import 'package:alfirdaws/models/AwaqatAlsalah_model.dart';
-import 'package:alfirdaws/services/awaqat_alsalah_services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import '../widgets/custom_card.dart';
 
-class alraayiysuh extends StatefulWidget {
-
+class alraayiysuh extends StatelessWidget {
   @override
 
-  State<alraayiysuh> createState() => _alraayiysuhState();
-}
 
-AwaqatAlsalahModle? futureAwaqatAlsalah;
-class _alraayiysuhState extends State<alraayiysuh> {
 
-AwaqatAlsalah salah=AwaqatAlsalah();
-  @override
-  void initState()  {
-    getdata()async{
-      futureAwaqatAlsalah =await salah.getAwaqatAlsalah();
-    }
-
-    super.initState();
-  }
-  @override
 
   Widget build(BuildContext context) {
+    BlocProvider.of<AwaqatAlsalahCubit>(context).getAwaqatAlsalah();
     return Column(
       children: [
         Stack(
           children: [
-
             Container(
               height: 200,
               width: double.infinity,
@@ -45,38 +33,224 @@ AwaqatAlsalah salah=AwaqatAlsalah();
                           as ImageProvider,
                       fit: BoxFit.cover,
                       opacity: .8)),
-              child: Center(child: Text("      ${DateFormat.jm().format(DateTime.now())}\n${ DateFormat.yMMMMd('en_US').format(DateTime.now())}\n",style: TextStyle(
-                fontSize:30,
-                color: Colors.white
+              child: Center(
+                 child:  
+                  StreamBuilder(
+                   stream: Stream.periodic(const Duration(seconds:1)),
 
-              ),)),
+    builder: (context, snapshot) {
+      return Text(
+        "       ${DateFormat('hh:mm:ss').format(DateTime.now())}\n${ DateFormat
+            .yMMMMd('en_US').format(DateTime.now())}\n",
+        style: TextStyle(fontSize: 30, color: Colors.white),
+      );
+
+    })
+                )
             ),
-
           ],
         ),
         Expanded(
           child: Container(
             child: ListView(
-
               children: [
-
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
+                  child: BlocBuilder<AwaqatAlsalahCubit, AwaqatAlsalahState>(
 
-                      CustomCard(pageTitle: 'الفجر\n${futureAwaqatAlsalah?.Fajr}', imageLocation: 'assets/images/f.jpg',height: 150,width: 110,fSize: 25,nav: false,),
-                      CustomCard(pageTitle: ' الظهر\n ${futureAwaqatAlsalah?.Dhuhr}', imageLocation: 'assets/images/z.jpg',height: 150,width: 110,fSize: 25,nav: false,),
-                      CustomCard(pageTitle: 'العصر\n${futureAwaqatAlsalah?.Asr}', imageLocation: 'assets/images/a.jpg',height: 150,width: 110,fSize: 25,nav: false,),
-                      CustomCard(pageTitle: 'المغرب\n ${futureAwaqatAlsalah?.Maghrib}', imageLocation: 'assets/images/m.jpg',height: 150,width: 110,fSize: 25,nav: false,),
-                      CustomCard(pageTitle: 'العشاء\n ${futureAwaqatAlsalah?.Isha}', imageLocation: 'assets/images/e.jpg',height: 150,width: 110,fSize: 25,nav: false,),
-                    ],
-                  ),
+                      builder: (context, state) {
+
+                    if (state == AwaqatAlsalahLoading) {
+                      return Row(
+                        children: [
+                          CustomCard(
+                            pageTitle: 'الفجر\n ⏳',
+                            imageLocation: 'assets/images/f.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: ' الظهر\n  ⏳',
+                            imageLocation: 'assets/images/z.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'العصر\n  ⏳',
+                            imageLocation: 'assets/images/a.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'المغرب\n  ⏳',
+                            imageLocation: 'assets/images/m.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'العشاء\n  ⏳',
+                            imageLocation: 'assets/images/e.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                        ],
+                      );
+                    } else if (state is AwaqatAlsalahSucces) {
+                      AwaqatAlsalahModle? futureAwaqatAlsalah =
+                          BlocProvider.of<AwaqatAlsalahCubit>(context)
+                              .awaqatAlsalahModle;
+
+                      return Row(
+                        children: [
+                          CustomCard(
+                            pageTitle: 'الفجر\n${futureAwaqatAlsalah?.Fajr}',
+                            imageLocation: 'assets/images/f.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: ' الظهر\n ${futureAwaqatAlsalah?.Dhuhr}',
+                            imageLocation: 'assets/images/z.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'العصر\n${futureAwaqatAlsalah?.Asr}',
+                            imageLocation: 'assets/images/a.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle:
+                                'المغرب\n ${futureAwaqatAlsalah?.Maghrib}',
+                            imageLocation: 'assets/images/m.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'العشاء\n ${futureAwaqatAlsalah?.Isha}',
+                            imageLocation: 'assets/images/e.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                        ],
+                      );
+                    } else if (state is AwaqatAlsalahFailure) {
+                      return Row(
+                        children: [
+                          CustomCard(
+                            pageTitle: 'الفجر\n 📴',
+                            imageLocation: 'assets/images/f.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: ' الظهر\n📴',
+                            imageLocation: 'assets/images/z.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'العصر\n📴',
+                            imageLocation: 'assets/images/a.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'المغرب\n📴',
+                            imageLocation: 'assets/images/m.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'العشاء\n📴',
+                            imageLocation: 'assets/images/e.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                        ],
+                      );
+                    } else {
+                      return Row(
+                        children: [
+                          CustomCard(
+                            pageTitle: 'الفجر\n ⏳',
+                            imageLocation: 'assets/images/f.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: ' الظهر\n  ⏳',
+                            imageLocation: 'assets/images/z.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'العصر\n  ⏳',
+                            imageLocation: 'assets/images/a.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'المغرب\n  ⏳',
+                            imageLocation: 'assets/images/m.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                          CustomCard(
+                            pageTitle: 'العشاء\n  ⏳',
+                            imageLocation: 'assets/images/e.jpg',
+                            height: 150,
+                            width: 110,
+                            fSize: 25,
+                            nav: false,
+                          ),
+                        ],
+                      );
+                    }
+                  }),
                 ),
                 CustomCard(
                   pageTitle: 'قران كريم',
                   imageLocation: 'assets/images/q .jpg',
-
                 ),
                 CustomCard(
                   pageTitle: 'الصلا ه',
@@ -90,12 +264,6 @@ AwaqatAlsalah salah=AwaqatAlsalah();
                   pageTitle: 'لاذكار',
                   imageLocation: 'assets/images/d.jpg',
                 ),
-                // CustomCard(
-                //   pageTitle: 'احاديث نبويه',
-                //  imageLocation:  'assets/images/احديث.jpeg',
-                //
-                //  ),
-
                 CustomCard(
                   pageTitle: 'اسماء الله الحسنى',
                   imageLocation: 'assets/images/img.png',
@@ -107,6 +275,4 @@ AwaqatAlsalah salah=AwaqatAlsalah();
       ],
     );
   }
-
-
 }
