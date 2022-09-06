@@ -10,13 +10,13 @@ class buildSectionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List items=BlocProvider.of<ListDataCubit>(context).items;
-    String? location=BlocProvider.of<ListDataCubit>(context).getlocation_datalist();
+   String? title=BlocProvider.of<ListDataCubit>(context).pageTitle;
 
    return
        GestureDetector(
        onTap: (){
          BlocProvider.of<ListDataCubit>(context).gitid(id);
-         if(BlocProvider.of<ListDataCubit>(context).pageTitle=='قران كريم'){
+         if(title =='قران كريم'){
            Navigator.pushNamed(context, "Quran", );
          }else{
            Navigator.pushNamed(context, "Display_data", );

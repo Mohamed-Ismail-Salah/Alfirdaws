@@ -7,10 +7,10 @@ import 'list_data_state.dart';
 
 class ListDataCubit extends Cubit<ListDataState> {
   ListDataCubit() : super(ListDataInitial());
-
+  String?  location_datalist ;
   String? pageTitle;
   int id=0;
-  List items = [];
+  List items=[] ;
 
   void gitid(int iditem){
     id =iditem ;
@@ -20,10 +20,10 @@ class ListDataCubit extends Cubit<ListDataState> {
     pageTitle =Title;
   }
 
-String getlocation_datalist(){
-  String?  location_datalist ;
+void getlocation_datalist(){
+
   switch ( pageTitle ) {
-    case 'قران كريم':  { location_datalist="assets/localdatabase/Quran.json";}
+    case'قران كريم': { location_datalist="assets/localdatabase/Quran.json";}
     break;
     case 'لاذكار' : location_datalist="assets/localdatabase/sections_db.json";
     break;
@@ -34,11 +34,12 @@ String getlocation_datalist(){
     case  'اسماء الله الحسنى' : location_datalist="assets/localdatabase/Names_Of_Allah.json";
     break;
   }
-return location_datalist!;
+
 }
 
 Future<void> readJson() async {
-    final String response = await rootBundle.loadString(getlocation_datalist());
+    getlocation_datalist();
+    final String response = await rootBundle.loadString( location_datalist!);
     final data = await json.decode(response);
    items = data["chapters"];
   }

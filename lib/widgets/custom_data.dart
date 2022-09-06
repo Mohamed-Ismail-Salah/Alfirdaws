@@ -5,10 +5,11 @@ import 'custom_buildSectionItem.dart';
 class Custom_data  extends StatelessWidget{
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
 
     List items=BlocProvider.of<ListDataCubit>(context).items;
-     return ListView.builder(
+
+     return  ListView.builder(
        physics: BouncingScrollPhysics(),
        itemBuilder: (BuildContext context, int index)=>buildSectionItem(id: index,),
        itemCount: items.length,

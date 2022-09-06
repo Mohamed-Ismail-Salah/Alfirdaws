@@ -89,7 +89,7 @@ class _QiblaCompassState extends State<Alqablah> {
 }
 
 class QiblahCompassWidget extends StatelessWidget {
-  final _kaabaSvg = SvgPicture.asset('assets/4.svg');
+  final _kaabaSvg = SvgPicture.asset('assets/images/4.svg');
 
   @override
   Widget build(BuildContext context) {
@@ -110,16 +110,20 @@ class QiblahCompassWidget extends StatelessWidget {
           children: <Widget>[
             Transform.rotate(
               angle: _angle,
-              child: SvgPicture.asset('assets/images/Brosen_windrose-ar.png', // compass
+              child:SvgPicture.asset('assets/images/5.svg', // compass
                   color: _platformBrightness == Brightness.dark
                       ? Colors.yellow
-                      : Colors.orange),
+                      : Colors.brown),
             ),
             _kaabaSvg,
-            SvgPicture.asset('assets/images/kaapa.png', //needle
-                color: _platformBrightness == Brightness.dark
-                    ? Colors.yellow
-                    : Colors.orange),
+            SvgPicture.asset('assets/images/3.svg', //needle
+              color: _platformBrightness == Brightness.dark
+                  ? Colors.yellow
+                  : Colors.brown
+              ,),
+
+
+
             Align(
               alignment: Alignment.bottomCenter,
               child: Text(
