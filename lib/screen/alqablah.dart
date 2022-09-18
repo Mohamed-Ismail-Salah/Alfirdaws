@@ -15,7 +15,7 @@ class Alqablah extends StatefulWidget {
 
 class _QiblaCompassState extends State<Alqablah> {
   final _locationStreamController =
-  StreamController<LocationStatus>.broadcast();
+      StreamController<LocationStatus>.broadcast();
 
   get stream => _locationStreamController.stream;
 
@@ -42,25 +42,21 @@ class _QiblaCompassState extends State<Alqablah> {
                 return QiblahCompassWidget();
               case LocationPermission.denied:
                 return LocationErrorWidget(
-                  error: "Location service permission denied",
+                  error: "تم رفض إذن خدمة الموقع",
                   callback: _checkLocationStatus,
                 );
               case LocationPermission.deniedForever:
                 return LocationErrorWidget(
-                  error: "Location service Denied Forever !",
+                  error: "رفض خدمة الموقع إلى الأبد!",
                   callback: _checkLocationStatus,
                 );
-            // case GeolocationStatus.unknown:
-            //   return LocationErrorWidget(
-            //     error: "Unknown Location service error",
-            //     callback: _checkLocationStatus,
-            //   );
+
               default:
                 return Container();
             }
           } else {
             return LocationErrorWidget(
-              error: "Please enable Location service",
+              error: "الرجاء تمكين خدمة الموقع",
               callback: _checkLocationStatus,
             );
           }
@@ -110,24 +106,22 @@ class QiblahCompassWidget extends StatelessWidget {
           children: <Widget>[
             Transform.rotate(
               angle: _angle,
-              child:SvgPicture.asset('assets/images/5.svg', // compass
+              child: SvgPicture.asset('assets/images/5.svg', // compass
                   color: _platformBrightness == Brightness.dark
                       ? Colors.yellow
                       : Colors.brown),
             ),
             _kaabaSvg,
-            SvgPicture.asset('assets/images/3.svg', //needle
+            SvgPicture.asset(
+              'assets/images/3.svg', //needle
               color: _platformBrightness == Brightness.dark
                   ? Colors.yellow
-                  : Colors.brown
-              ,),
-
-
-
+                  : Colors.brown,
+            ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Text(
-                "Align both arrow head\nDo not put device close to metal object.\nCalibrate the compass eveytime you use it.",
+                "قم بمحاذاة رأس السهم\nلا تضع الجهاز بالقرب من جسم معدني.\nقم بمعايرة البوصلة في أي وقت تستخدمه.",
                 textAlign: TextAlign.center,
               ),
             )

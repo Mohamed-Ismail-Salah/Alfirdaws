@@ -8,11 +8,11 @@ import '../widgets/custom_data.dart';
 class List_of_data extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-String? title = BlocProvider.of<ListDataCubit>(context).pageTitle;
+    String? title = BlocProvider.of<ListDataCubit>(context).pageTitle;
     return Scaffold(
         backgroundColor: keybodycolor,
         appBar: AppBar(
-          title: Text( title!),
+          title: Text(title!),
         ),
         body: Custom_data());
   }

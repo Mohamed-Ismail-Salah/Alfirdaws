@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  loading_indicator: ^3.1.0
   flutter_qiblah: ^2.0.2
   http:
   flutter_bloc: ^8.1.1

@@ -11,10 +11,6 @@ import '../widgets/custom_card.dart';
 
 class alraayiysuh extends StatelessWidget {
   @override
-
-
-
-
   Widget build(BuildContext context) {
     BlocProvider.of<AwaqatAlsalahCubit>(context).getAwaqatAlsalah();
     return Column(
@@ -22,32 +18,26 @@ class alraayiysuh extends StatelessWidget {
         Stack(
           children: [
             Container(
-              height: 200,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(40)),
-                  image: DecorationImage(
-                      image: AssetImage(
-                              "assets/images/islamic-prayer-dusk-sun.jpg")
-                          as ImageProvider,
-                      fit: BoxFit.cover,
-                      opacity: .8)),
-              child: Center(
-                 child:  
-                  StreamBuilder(
-                   stream: Stream.periodic(const Duration(seconds:1)),
-
-    builder: (context, snapshot) {
-      return Text(
-        "       ${DateFormat('hh:mm:ss').format(DateTime.now())}\n${ DateFormat
-            .yMMMMd('en_US').format(DateTime.now())}\n",
-        style: TextStyle(fontSize: 30, color: Colors.white),
-      );
-
-    })
-                )
-            ),
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.vertical(bottom: Radius.circular(40)),
+                    image: DecorationImage(
+                        image: AssetImage(
+                                "assets/images/islamic-prayer-dusk-sun.jpg")
+                            as ImageProvider,
+                        fit: BoxFit.cover,
+                        opacity: .8)),
+                child: Center(
+                    child: StreamBuilder(
+                        stream: Stream.periodic(const Duration(seconds: 1)),
+                        builder: (context, snapshot) {
+                          return Text(
+                            "       ${DateFormat('hh:mm:ss').format(DateTime.now())}\n${DateFormat.yMMMMd('en_US').format(DateTime.now())}\n",
+                            style: TextStyle(fontSize: 30, color: Colors.white),
+                          );
+                        }))),
           ],
         ),
         Expanded(
@@ -57,9 +47,7 @@ class alraayiysuh extends StatelessWidget {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: BlocBuilder<AwaqatAlsalahCubit, AwaqatAlsalahState>(
-
                       builder: (context, state) {
-
                     if (state == AwaqatAlsalahLoading) {
                       return Row(
                         children: [

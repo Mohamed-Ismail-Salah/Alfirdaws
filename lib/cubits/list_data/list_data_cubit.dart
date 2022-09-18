@@ -38,11 +38,14 @@ void getlocation_datalist(){
 }
 
 Future<void> readJson() async {
+    emit(ListDataLoding());
     getlocation_datalist();
     final String response = await rootBundle.loadString( location_datalist!);
     final data = await json.decode(response);
    items = data["chapters"];
-  }
+    print("object");
+    emit(ListDataSuccessful());
+   }
 
 
 

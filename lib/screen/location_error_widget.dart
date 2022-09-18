@@ -7,7 +7,6 @@ class LocationErrorWidget extends StatelessWidget {
   const LocationErrorWidget({Key? key, this.error, this.callback})
       : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     final box = SizedBox(height: 32);
@@ -26,8 +25,7 @@ class LocationErrorWidget extends StatelessWidget {
             box,
             Text(
               error!,
-              style: TextStyle(
-                  color: errorColor, fontWeight: FontWeight.bold),
+              style: TextStyle(color: errorColor, fontWeight: FontWeight.bold),
             ),
             box,
             RaisedButton(

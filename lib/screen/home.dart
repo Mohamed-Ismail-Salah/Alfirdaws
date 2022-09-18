@@ -8,10 +8,9 @@ import '../constants/constants.dart';
 import 'alqablah.dart';
 import 'alraayiysuh.dart';
 
-class home extends StatelessWidget{
+class home extends StatelessWidget {
   @override
-
-  List<Widget> screen=[
+  List<Widget> screen = [
     Alqablah(),
     Tasbih(),
     alraayiysuh(),
@@ -19,33 +18,39 @@ class home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-        index: 2,
-        color: keybodycolor,
-        backgroundColor:Colors.brown,
-        onTap: (index){
-         BlocProvider.of<HomeCubit>(context).getbody(index);
-        },
-        items:<Widget>[
-          Icon(  Icons.compass_calibration,size: 30,),
-          Icon(  Icons.add_circle_outline,size: 30,),
-          Icon(  Icons.home,size: 30,),
-        ],),
-      backgroundColor: keybodycolor,
-
-      body:BlocBuilder<HomeCubit,HomeState>(
-        builder: (BuildContext context, state) {
-          if(state is AlqablahState){
-           return screen[0];
-          }else if(state is TasbihState){
-            return screen[1];
-          }else{
-            return screen[2];
-          }
-        },
-
-      )
-
-    );
+        bottomNavigationBar: CurvedNavigationBar(
+          index: 2,
+          color: keybodycolor,
+          backgroundColor: Colors.brown,
+          onTap: (index) {
+            BlocProvider.of<HomeCubit>(context).getbody(index);
+          },
+          items: <Widget>[
+            Icon(
+              Icons.compass_calibration,
+              size: 30,
+            ),
+            Icon(
+              Icons.add_circle_outline,
+              size: 30,
+            ),
+            Icon(
+              Icons.home,
+              size: 30,
+            ),
+          ],
+        ),
+        backgroundColor: keybodycolor,
+        body: BlocBuilder<HomeCubit, HomeState>(
+          builder: (BuildContext context, state) {
+            if (state is AlqablahState) {
+              return screen[0];
+            } else if (state is TasbihState) {
+              return screen[1];
+            } else {
+              return screen[2];
+            }
+          },
+        ));
   }
 }
