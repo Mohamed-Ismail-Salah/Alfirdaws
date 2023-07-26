@@ -1,6 +1,6 @@
 # Alfirdaws  
 ## Introduction
-The  Alfirdaws is an Flutter app aimed at providing a range of religious features to users. The app offers the Quran, Adhkar, Asmaul Husna, and prayer times to help users get closer to their religious practices.
+Alfirdaws is a Flutter app that aims to provide a set of religious features to users. The application offers the Qur'an, Azkar, ablutions, prayers, Asmaul Husna, and prayer times to help users get closer to their religious practices.
  
  | | | |  
 | --- | --- | --- | 
