@@ -6,9 +6,10 @@ import 'package:alfirdaws/screen/quran.dart';
 import 'package:alfirdaws/services/awaqat_alsalah_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'constants/constants.dart';
+ import 'core/resources_app/color_manager.dart';
 import 'cubits/awaqat_alsalah_cubit/logc_awaqat_alsalah_cubit.dart';
 import 'cubits/list_data/list_data_cubit.dart';
+import 'features/Splash/presentation/views/splash_view.dart';
 
 void main() {
   runApp(
@@ -29,17 +30,18 @@ child: MyApp(),
 return MaterialApp(
  routes: {
    "home": (context) =>home() ,
-   "list_of_data":(context) => List_of_data() ,
-   "Display_data":(context) => Display_data(),
+   "SplashView":(context) =>const SplashView(),
+   "list_of_data":(context) => ListOfData() ,
+   "Display_data":(context) => DisplayData(),
    "Quran":(context) =>  Quran(),
  },
-   initialRoute:'home' ,
+   initialRoute:"SplashView",
 
 
   theme: ThemeData(
     appBarTheme:AppBarTheme(
-      color: keyAppbarcolor,
-      titleTextStyle: TextStyle(fontSize: 30,),
+      color:   ColorManager.primary,
+      titleTextStyle: const TextStyle(fontSize: 30,),
         centerTitle: true,
 
     ),

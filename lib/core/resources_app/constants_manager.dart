@@ -1,4 +1,4 @@
 class AppConstants {
-  static const int splashDelay = 2;
-  static const int sliderAnimationTime = 300;
+  static const int splashSpeed = 100;
+  static const int splashDurationTime = 100;
 }

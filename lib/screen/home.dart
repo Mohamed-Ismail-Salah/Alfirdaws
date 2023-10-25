@@ -1,10 +1,11 @@
+import 'package:alfirdaws/core/resources_app/color_manager.dart';
 import 'package:alfirdaws/cubits/home_cubit/home_cubit.dart';
 import 'package:alfirdaws/cubits/home_cubit/home_state.dart';
 import 'package:alfirdaws/screen/tasbih.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../constants/constants.dart';
+
 import 'alqablah.dart';
 import 'alraayiysuh.dart';
 
@@ -20,8 +21,8 @@ class home extends StatelessWidget {
     return Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
           index: 2,
-          color: keybodycolor,
-          backgroundColor: Colors.brown,
+          color:  ColorManager.secondColor,
+          backgroundColor: ColorManager.primary,
           onTap: (index) {
             BlocProvider.of<HomeCubit>(context).getbody(index);
           },
@@ -40,7 +41,7 @@ class home extends StatelessWidget {
             ),
           ],
         ),
-        backgroundColor: keybodycolor,
+        backgroundColor: ColorManager.secondColor,
         body: BlocBuilder<HomeCubit, HomeState>(
           builder: (BuildContext context, state) {
             if (state is AlqablahState) {
