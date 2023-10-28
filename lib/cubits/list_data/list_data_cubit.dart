@@ -23,15 +23,15 @@ class ListDataCubit extends Cubit<ListDataState> {
 void getlocation_datalist(){
 
   switch ( pageTitle ) {
-    case'قران كريم': { location_datalist="assets/localdatabase/Quran.json";}
+    case'قران كريم': { location_datalist="assets/json/Quran.json";}
     break;
-    case 'لاذكار' : location_datalist="assets/localdatabase/sections_db.json";
+    case 'لاذكار' : location_datalist="assets/json/sections_db.json";
     break;
-    case 'الصلا ه' : location_datalist="assets/localdatabase/alsalah.json";
+    case 'الصلا ه' : location_datalist="assets/json/alsalah.json";
     break;
-    case  'الوضوء' : location_datalist="assets/localdatabase/alwudu.json";
+    case  'الوضوء' : location_datalist="assets/json/alwudu.json";
     break;
-    case  'اسماء الله الحسنى' : location_datalist="assets/localdatabase/Names_Of_Allah.json";
+    case  'اسماء الله الحسنى' : location_datalist="assets/json/Names_Of_Allah.json";
     break;
   }
 

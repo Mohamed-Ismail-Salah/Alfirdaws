@@ -1,6 +1,6 @@
 import 'package:alfirdaws/cubits/home_cubit/home_cubit.dart';
 import 'package:alfirdaws/screen/display%20_data.dart';
-import 'package:alfirdaws/screen/home.dart';
+import 'package:alfirdaws/features/home/presentation/views/home_view.dart';
 import 'package:alfirdaws/screen/list_of_data.dart';
 import 'package:alfirdaws/screen/quran.dart';
 import 'package:alfirdaws/services/awaqat_alsalah_services.dart';
@@ -28,8 +28,9 @@ child: MyApp(),
   Widget build(BuildContext context) {
 
 return MaterialApp(
+  debugShowCheckedModeBanner: false,
  routes: {
-   "home": (context) =>home() ,
+   "home": (context) =>HomeView() ,
    "SplashView":(context) =>const SplashView(),
    "list_of_data":(context) => ListOfData() ,
    "Display_data":(context) => DisplayData(),
@@ -39,6 +40,7 @@ return MaterialApp(
 
 
   theme: ThemeData(
+      scaffoldBackgroundColor: ColorManager.secondColor,
     appBarTheme:AppBarTheme(
       color:   ColorManager.primary,
       titleTextStyle: const TextStyle(fontSize: 30,),

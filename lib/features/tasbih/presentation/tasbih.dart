@@ -1,3 +1,4 @@
+import 'package:alfirdaws/core/resources_app/color_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class _TasbihState extends State<Tasbih> {
           Center(
               child: Card(
                 elevation: 20,
-                color: Colors.brown.shade100,
+                color: ColorManager.lightBrown ,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(55),
                 ),
@@ -30,7 +31,7 @@ class _TasbihState extends State<Tasbih> {
                     Center(
                       child: Text(
                         "عددالتسبيحات",
-                        style: TextStyle(fontSize: 40, color: Colors.brown),
+                        style: TextStyle(fontSize: 40, color:ColorManager.primary,),
                       ),
                     ), SizedBox(
                       height: 30,
@@ -38,7 +39,7 @@ class _TasbihState extends State<Tasbih> {
                     Center(
                       child: Text(
                         "$count ",
-                        style: TextStyle(fontSize: 90, color: Colors.brown),
+                        style: TextStyle(fontSize: 90, color: ColorManager.primary,),
                       ),
                     ),
 
@@ -46,7 +47,7 @@ class _TasbihState extends State<Tasbih> {
                       padding: const EdgeInsets.only(left:250,bottom: 10),
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Colors.brown,
+                            color: ColorManager.primary,
                             shape: BoxShape.circle
                         ),
                         child: IconButton(
@@ -68,7 +69,7 @@ class _TasbihState extends State<Tasbih> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.brown,
+              primary: ColorManager.primary,
               fixedSize: Size(170, 50),
               shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
