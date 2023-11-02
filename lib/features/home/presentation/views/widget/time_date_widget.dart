@@ -31,7 +31,7 @@ class TimeDateWidget extends StatelessWidget {
                     stream: Stream.periodic(const Duration(seconds:AppConstants.timeDuration)),
                     builder: (context, snapshot) {
                       return Text(
-                        "       ${DateFormat('hh:mm a').format(DateTime.now())}\n\n ${DateFormat.yMMMMd('en_US').format(DateTime.now())}\n",
+                        "       ${DateFormat('hh:mm a').format(DateTime.now())}\n ${DateFormat.yMMMMd('en_US').format(DateTime.now())}\n",
                         style: getBoldStyle(
                             color: ColorManager.secondColor,
                             fontSize: FontSize.s30),

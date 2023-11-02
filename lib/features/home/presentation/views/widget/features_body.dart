@@ -3,7 +3,7 @@ import 'package:alfirdaws/features/home/presentation/views/widget/time_salah_wid
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/resources_app/assets_manager.dart';
-import '../../../../../cubits/awaqat_alsalah_cubit/logc_awaqat_alsalah_cubit.dart';
+import '../../manger/awaqat_alsalah_cubit/logc_awaqat_alsalah_cubit.dart';
 import 'list_features_widget.dart';
 
 class FeaturesBody extends StatelessWidget {

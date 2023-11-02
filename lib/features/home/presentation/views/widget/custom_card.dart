@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../cubits/list_data/list_data_cubit.dart';
 
 class CustomCard extends StatelessWidget {
-  CustomCard({super.key,
+  CustomCard({
+    super.key,
     this.nav = true,
     this.height = 200,
     this.width = double.infinity,
@@ -55,11 +55,10 @@ class CustomCard extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                      image: AssetImage(imageLocation),
-                      fit: BoxFit.cover)),
+                      image: AssetImage(imageLocation), fit: BoxFit.cover)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Center(
                     child: Text(

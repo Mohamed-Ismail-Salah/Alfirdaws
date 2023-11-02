@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/resources_app/color_manager.dart';
 import '../../../../../core/resources_app/constants_manager.dart';
-import '../../../../../cubits/home_cubit/home_cubit.dart';
+import '../../manger/home_cubit/home_cubit.dart';
 
 class BottomBarWidget extends StatelessWidget{
   const BottomBarWidget({super.key});

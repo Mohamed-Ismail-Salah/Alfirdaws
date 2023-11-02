@@ -1,6 +1,7 @@
+import 'package:alfirdaws/core/resources_app/color_manager.dart';
+import 'package:alfirdaws/core/resources_app/values_manager.dart';
 import 'package:flutter/material.dart';
-
-
+import '../../../../../core/resources_app/styles_manager.dart';
 
 class AwaqatAlsalahFailureWidget extends StatelessWidget {
   const AwaqatAlsalahFailureWidget({
@@ -9,37 +10,26 @@ class AwaqatAlsalahFailureWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-    Center(
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
         Icon(
           Icons.signal_wifi_off,
-          size: 100,
-          color: Colors.grey,
+          size: AppSize.s60,
+          color: ColorManager.grayColor,
         ),
         Text(
-          "No Internet Connection",
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.grey,
-          ),
+          "لا يوجد اتصال بالإنترنت",
+          style: getMediumStyle(
+              color: ColorManager.grayColor, fontSize: AppSize.s18),
         ),
         Text(
-          "Please check your internet connection and try again.",
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.grey,
-          ),
+          "  يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى لعرض اقوقات الصلاه",
+          style: getMediumStyle(
+              color: ColorManager.grayColor, fontSize: AppSize.s18),
           textAlign: TextAlign.center,
         ),
       ],
-    ),
-    )
-
-    ]);
+    );
   }
 }
-

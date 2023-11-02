@@ -1,8 +1,8 @@
 import 'package:alfirdaws/core/resources_app/values_manager.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../core/resources_app/assets_manager.dart';
-import '../../../../../models/AwaqatAlsalah_model.dart';
+import '../../../../../core/utils/functions/format_time12Hour.dart';
+ import '../../../data/models/awaqat_alsalah_model.dart';
 import 'custom_card.dart';
 
 class AwaqatAlsalahSuccessWidget extends StatelessWidget {
@@ -11,17 +11,17 @@ class AwaqatAlsalahSuccessWidget extends StatelessWidget {
     required this.futureAwaqatAlsalah,
   });
 
-  final AwaqatAlsalahModle? futureAwaqatAlsalah;
+  final AwaqatAlsalahModel? futureAwaqatAlsalah;
 
   @override
   Widget build(BuildContext context) {
 
     List pageTitleList = [
-      'الفجر\n${futureAwaqatAlsalah?.Fajr}',
-      ' الظهر\n ${futureAwaqatAlsalah?.Dhuhr}',
-      'العصر\n${futureAwaqatAlsalah?.Asr}',
-      'المغرب\n ${futureAwaqatAlsalah?.Maghrib}',
-      'العشاء\n ${futureAwaqatAlsalah?.Isha}',
+      '  الفجر\n${formatTime12Hour(futureAwaqatAlsalah!.fajr)}',
+      '  الظهر\n ${formatTime12Hour(futureAwaqatAlsalah!.dhuhr)}',
+      ' العصر\n${formatTime12Hour(futureAwaqatAlsalah!.asr)}',
+      ' المغرب\n ${formatTime12Hour(futureAwaqatAlsalah!.maghrib)}',
+      ' العشاء\n ${formatTime12Hour(futureAwaqatAlsalah!.isha)}',
     ];
     List imageLocationList = [
       ImageAssets.bacFajr,
@@ -46,4 +46,9 @@ class AwaqatAlsalahSuccessWidget extends StatelessWidget {
       ),
     );
   }
+
+
+
+
+
 }
