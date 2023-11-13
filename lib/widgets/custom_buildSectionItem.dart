@@ -1,3 +1,4 @@
+import 'package:alfirdaws/core/resources_app/color_manager.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,20 +41,40 @@ class buildSectionItem extends StatelessWidget {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    Colors.brown.shade900,
-                    Colors.brown.shade600,
-                    Colors.brown.shade400,
-                    Colors.brown.shade900,
+                    ColorManager.darkBrown,
+                    ColorManager.primary,
+                    ColorManager.primary,
+                    ColorManager.darkBrown,
                   ])),
-          child: Center(
-              child: Text(
-            items[id]["name"],
-            style: TextStyle(
-              fontSize: 22.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          )),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+
+            children: [
+              SizedBox(
+                width: 100,
+                child: Padding(
+                  padding: const EdgeInsets.only(top:10),
+                  child: Text(
+
+                    items[id]["name"],
+                    style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                    ),
+
+                  ),
+                ),
+              ),
+              Image.asset(
+                items[id]["Descent"] == "مكية"
+                ? "assets/images/kaaba.png"
+                : "assets/images/mosque.png",
+                width: 50,
+                height: 50,
+              ),
+            ],
+          ),
         ),
       ),
     );
