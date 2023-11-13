@@ -4,5 +4,6 @@ class AppConstants {
   static const int  index = 2;
   static const int  timeDuration = 1;
   static const int   salahCount = 5;
+  static const String   kAwaqatAlsalahBox ="AwaqatAlsalahBox";
 
 }

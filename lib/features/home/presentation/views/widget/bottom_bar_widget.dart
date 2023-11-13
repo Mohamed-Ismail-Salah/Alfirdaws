@@ -16,7 +16,7 @@ class BottomBarWidget extends StatelessWidget{
       color:  ColorManager.secondColor,
       backgroundColor: ColorManager.primary,
       onTap: (index) {
-        BlocProvider.of<HomeCubit>(context).getbody(index);
+        BlocProvider.of<HomeCubit>(context).getBody(index);
       },
       items: const <Widget>[
         Icon(

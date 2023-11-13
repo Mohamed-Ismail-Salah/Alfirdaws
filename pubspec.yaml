@@ -27,6 +27,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  connectivity_plus:
+  hive:
+  hive_flutter:
   shimmer:
   animated_text_kit:
   lottie:
@@ -48,6 +51,8 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  build_runner:
+  hive_generator:
   flutter_test:
     sdk: flutter
 

@@ -6,7 +6,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   int currentIndex = 2;
 
-  void getbody(int index) {
+  void getBody(int index) {
     currentIndex = index;
     if (currentIndex == 0) {
       emit(AlqablahState());

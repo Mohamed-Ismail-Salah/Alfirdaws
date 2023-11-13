@@ -38,7 +38,7 @@ void getlocation_datalist(){
 }
 
 Future<void> readJson() async {
-    emit(ListDataLoding());
+    emit(ListDataLoading());
     getlocation_datalist();
     final String response = await rootBundle.loadString( location_datalist!);
     final data = await json.decode(response);

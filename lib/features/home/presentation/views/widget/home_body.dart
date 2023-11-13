@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../screen/alqablah.dart';
+import '../../../../alqablah/presentaton/views/alqablah_body.dart';
 import '../../manger/home_cubit/home_cubit.dart';
 import '../../manger/home_cubit/home_state.dart';
 import 'features_body.dart';
-import '../../../../tasbih/presentation/tasbih.dart';
+import '../../../../tasbih/presentation/views/tasbih_view_body.dart';
 class HomeBody extends StatelessWidget{
     const HomeBody({super.key});
   @override
   Widget build(BuildContext context) {
     List<Widget> screen = [
       Alqablah(),
-      Tasbih(),
+      TasbihBody(),
       const FeaturesBody(),
     ];
    return BlocBuilder<HomeCubit, HomeState>(

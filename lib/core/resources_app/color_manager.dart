@@ -6,5 +6,6 @@ class ColorManager {
   static Color secondColor =const   Color(0xffEBE9FF);
   static Color wightColor =const   Color(0xffffffff);
   static Color grayColor =const   Color(0xff939393);
+  static Color errorColor =  const Color(0xffb00020);
 
 }
