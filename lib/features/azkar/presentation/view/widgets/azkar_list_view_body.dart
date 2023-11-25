@@ -8,6 +8,8 @@ import '../../../../../cubits/list_data/list_data_state.dart';
 import 'azkar_section_item.dart';
 
 class AzkarListViewBody extends StatelessWidget{
+  const AzkarListViewBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ListDataCubit, ListDataState>(builder: (context, state) {

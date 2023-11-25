@@ -12,7 +12,7 @@ class AzkarListView extends StatelessWidget {
   Widget build(BuildContext context) {
     String? title = BlocProvider.of<ListDataCubit>(context).pageTitle;
     return Scaffold(
-      body:  AzkarListViewBody(),
+      body:  const AzkarListViewBody(),
       backgroundColor:  ColorManager.secondColor,
       appBar: AppBar(
         title: Text(title!),
