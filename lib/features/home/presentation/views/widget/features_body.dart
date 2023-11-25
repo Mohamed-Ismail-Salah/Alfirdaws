@@ -13,7 +13,7 @@ class FeaturesBody extends StatelessWidget {
     List pageTitleList = [
       'قران كريم',
       'الصلا ه',
-      'الوضوء',
+       'الوضوء',
       'لاذكار',
       'اسماء الله الحسنى',
     ];

@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:alfirdaws/features/alqablah/presentaton/views/widget/qiblah_compass_widget.dart';
+import 'package:alfirdaws/features/alqablah/presentation/views/widget/qiblah_compass_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:geolocator/geolocator.dart';

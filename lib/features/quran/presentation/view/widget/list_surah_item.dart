@@ -1,33 +1,25 @@
-import 'package:alfirdaws/core/resources_app/color_manager.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubits/list_data/list_data_cubit.dart';
+import '../../../../../core/resources_app/color_manager.dart';
+import '../../../../../cubits/list_data/list_data_cubit.dart';
 
-class buildSectionItem extends StatelessWidget {
-  int id;
+class ListSurahItem extends StatelessWidget{
+  const ListSurahItem({super.key, required this.id});
 
-  buildSectionItem({required this.id});
+  final int id;
   @override
   Widget build(BuildContext context) {
     List items = BlocProvider.of<ListDataCubit>(context).items;
-    String? title = BlocProvider.of<ListDataCubit>(context).pageTitle;
+
 
     return GestureDetector(
       onTap: () {
         BlocProvider.of<ListDataCubit>(context).gitid(id);
-        if (title == 'قران كريم') {
           Navigator.pushNamed(
             context,
             "Quran",
           );
-        } else {
-          Navigator.pushNamed(
-            context,
-            "Display_data",
-          );
-        }
       },
       child: Padding(
         padding: const EdgeInsets.all(7),
@@ -57,10 +49,10 @@ class buildSectionItem extends StatelessWidget {
                   child: Text(
 
                     items[id]["name"],
-                    style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                    style: const TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
 
                   ),
@@ -68,8 +60,8 @@ class buildSectionItem extends StatelessWidget {
               ),
               Image.asset(
                 items[id]["Descent"] == "مكية"
-                ? "assets/images/kaaba.png"
-                : "assets/images/mosque.png",
+                    ? "assets/images/kaaba.png"
+                    : "assets/images/mosque.png",
                 width: 50,
                 height: 50,
               ),

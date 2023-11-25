@@ -1,17 +1,17 @@
  import 'package:alfirdaws/core/resources_app/color_manager.dart';
 import 'package:flutter/material.dart';
-import '../widgets/custom_quran_detils.dart';
+import 'widget/quran_details_body.dart';
 
-class Quran extends StatelessWidget {
-  const Quran({super.key});
+class QuranDetailsView extends StatelessWidget {
+  const QuranDetailsView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Scaffold(
         backgroundColor: ColorManager.backgroundQuran,
-        body: SingleChildScrollView(
-            scrollDirection: Axis.vertical, child: CustomQuran()),
+        body: const SingleChildScrollView(
+            scrollDirection: Axis.vertical, child: QuranDetailsBody()),
       ),
     );
   }

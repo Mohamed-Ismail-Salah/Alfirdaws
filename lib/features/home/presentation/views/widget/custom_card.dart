@@ -29,7 +29,7 @@ class CustomCard extends StatelessWidget {
           BlocProvider.of<ListDataCubit>(context).readJson();
           Navigator.pushNamed(
             context,
-            "list_of_data",
+           pageTitle,
           );
         }
       },
