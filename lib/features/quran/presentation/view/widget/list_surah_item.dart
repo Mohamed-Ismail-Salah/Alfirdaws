@@ -42,20 +42,16 @@ class ListSurahItem extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
 
             children: [
-              SizedBox(
-                width: 100,
-                child: Padding(
-                  padding: const EdgeInsets.only(top:10),
-                  child: Text(
-
-                    items[id]["name"],
-                    style: const TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-
+              Padding(
+                padding: const EdgeInsets.only(top:10),
+                child: Text(
+                  items[id]["name"],
+                  style: const TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
+
                 ),
               ),
               Image.asset(

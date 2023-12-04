@@ -26,7 +26,10 @@ class NameOfSurah extends StatelessWidget {
               padding: const EdgeInsets.only(top: 11),
               child: Text(
                 "سورة ${items![id!]["name"]}",
-                style: const TextStyle(fontSize: 25, color: Colors.black),
+                style: const TextStyle(fontSize:29, color: Colors.black
+,fontWeight: FontWeight.bold
+                 ,
+                ),
               ),
             )),
       ],

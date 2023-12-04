@@ -23,60 +23,55 @@ import 'features/quran/presentation/view/list_all_surahs_view.dart';
 import 'features/wadaw/presentation/view/wadaw_display_data_view.dart';
 import 'features/wadaw/presentation/view/wadaw_list_view.dart';
 
-void main()async {
+void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(AwaqatAlsalahModelAdapter());
   await Hive.openBox<AwaqatAlsalahModel>(AppConstants.kAwaqatAlsalahBox);
-  runApp(
-    MultiBlocProvider(
-providers: [
-  BlocProvider(create: (context)=> AwaqatAlsalahCubit(AwaqatAlsalahRepoImpl(awaqatAlsalahLocalDataSource: AwaqatAlsalahLocalDataSourceImpl(), awaqatAlsalahRemoteDataSource:AlsalahRemoteDataSourceImpl()  ))),
-  BlocProvider(create: (context)=> HomeCubit()),
-  BlocProvider(create: (context)=> ListDataCubit()),
-],
-child: const MyApp(),
-    )
-   );
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider(
+          create: (context) => AwaqatAlsalahCubit(AwaqatAlsalahRepoImpl(
+              awaqatAlsalahLocalDataSource: AwaqatAlsalahLocalDataSourceImpl(),
+              awaqatAlsalahRemoteDataSource: AlsalahRemoteDataSourceImpl()))),
+      BlocProvider(create: (context) => HomeCubit()),
+      BlocProvider(create: (context) => ListDataCubit()),
+    ],
+    child: const MyApp(),
+  ));
 }
- class MyApp extends StatelessWidget{
+
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-
-return MaterialApp(
-  debugShowCheckedModeBanner: false,
- routes: {
-   "home": (context) =>const HomeView() ,
-   "SplashView":(context) =>const SplashView(),
-
-   "Quran":(context) =>  QuranDetailsView(),
-   'قران كريم':(context) => ListAllSurahsView(),
-   'الصلا ه':(context) => AlsalahListView(),
-   'لاذكار':(context) => AzkarListView(),
-   'الوضوء':(context) =>  WadawListView(),
-   'اسماء الله الحسنى':(context) =>AsmaaAllaAlhsnaListView(),
-   "AlsalahDisplayDataView":(context) =>AlsalahDisplayDataView(),
-   "WadawDisplayDataView":(context) =>WadawDisplayDataView(),
-   "AzkarDisplayDataView":(context) =>AzkarDisplayDataView(),
-   "AsmaaAllaAlhsnaDisplayDataView":(context) =>AsmaaAllaAlhsnaDisplayDataView()
- },
-   initialRoute:"SplashView",
-
-
-  theme: ThemeData(
-      scaffoldBackgroundColor: ColorManager.secondColor,
-    appBarTheme:AppBarTheme(
-      color:   ColorManager.primary,
-      titleTextStyle: const TextStyle(fontSize: 30,),
-        centerTitle: true,
-
-    ),
-     fontFamily:'Tajawal'
-
-
-  ),
-);
-
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        "home": (context) => const HomeView(),
+        "SplashView": (context) => const SplashView(),
+        "Quran": (context) => QuranDetailsView(),
+        'قران كريم': (context) => ListAllSurahsView(),
+        'الصلا ه': (context) => AlsalahListView(),
+        'لاذكار': (context) => AzkarListView(),
+        'الوضوء': (context) => WadawListView(),
+        'اسماء الله الحسنى': (context) => AsmaaAllaAlhsnaListView(),
+        "AlsalahDisplayDataView": (context) => AlsalahDisplayDataView(),
+        "WadawDisplayDataView": (context) => WadawDisplayDataView(),
+        "AzkarDisplayDataView": (context) => AzkarDisplayDataView(),
+        "AsmaaAllaAlhsnaDisplayDataView": (context) =>
+            AsmaaAllaAlhsnaDisplayDataView()
+      },
+      initialRoute: "SplashView",
+      theme: ThemeData(
+          scaffoldBackgroundColor: ColorManager.secondColor,
+          appBarTheme: AppBarTheme(
+            color: ColorManager.primary,
+            titleTextStyle: const TextStyle(
+              fontSize: 30,
+            ),
+            centerTitle: true,
+          ),
+          fontFamily: 'Tajawal'),
+    );
   }
-
- }
+}
