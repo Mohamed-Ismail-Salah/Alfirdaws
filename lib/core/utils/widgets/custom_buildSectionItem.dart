@@ -1,14 +1,11 @@
 import 'package:alfirdaws/core/resources_app/color_manager.dart';
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../cubits/list_data/list_data_cubit.dart';
 
 
-class buildSectionItem extends StatelessWidget {
-
-
-  const buildSectionItem({super.key, required this.id});
+class BuildSectionItem extends StatelessWidget {
+  const BuildSectionItem({super.key, required this.id});
   final int id;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +18,6 @@ class buildSectionItem extends StatelessWidget {
             context,
             "Display_data",
           );
-
       },
       child: Padding(
         padding: const EdgeInsets.all(7),
