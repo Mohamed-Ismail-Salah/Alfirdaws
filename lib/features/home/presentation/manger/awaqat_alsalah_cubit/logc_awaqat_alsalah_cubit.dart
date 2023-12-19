@@ -13,7 +13,6 @@ class AwaqatAlsalahCubit extends Cubit<AwaqatAlsalahState> {
   void getAwaqatAlsalah() async {
     emit(AwaqatAlsalahLoading());
     try {
-
       awaqatAlsalahModel = await awaqatAlsalahRepoImpl.getAwaqatAlsalah();
       emit(AwaqatAlsalahSucces());
     } catch (e) {

@@ -5,6 +5,7 @@ class ColorManager {
   static Color lightBrown = const Color(0xfff1cead);
   static Color darkBrown = const Color(0xff412000);
   static Color secondColor =const   Color(0xffEBE9FF);
+  static Color drawerColor =const   Color(0x42B7A382);
   static Color wightColor =const   Color(0xffffffff);
   static Color grayColor =const   Color(0xff939393);
   static Color errorColor =  const Color(0xffb00020);

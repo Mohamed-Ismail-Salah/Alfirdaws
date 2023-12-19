@@ -55,7 +55,8 @@ class CustomCard extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                      image: AssetImage(imageLocation), fit: BoxFit.cover)),
+                      image: AssetImage(imageLocation),
+                      fit: BoxFit.cover)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -27,7 +27,8 @@ class TextAnimation extends StatelessWidget {
           animatedTexts: [
             TypewriterAnimatedText(
               AppStrings.alFirdaws,
-              textStyle:  getBoldStyle(color:  ColorManager.secondColor,fontSize:FontSize.s30 ),
+              textStyle:  getBoldStyle(color:  ColorManager.secondColor,
+                  fontSize:FontSize.s30 ),
               speed: const Duration(milliseconds:AppConstants.splashSpeed),
             ),
           ]),

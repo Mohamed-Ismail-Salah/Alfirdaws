@@ -49,17 +49,17 @@ class MyApp extends StatelessWidget {
       routes: {
         "home": (context) => const HomeView(),
         "SplashView": (context) => const SplashView(),
-        "Quran": (context) => QuranDetailsView(),
-        'قران كريم': (context) => ListAllSurahsView(),
-        'الصلا ه': (context) => AlsalahListView(),
-        'لاذكار': (context) => AzkarListView(),
-        'الوضوء': (context) => WadawListView(),
-        'اسماء الله الحسنى': (context) => AsmaaAllaAlhsnaListView(),
-        "AlsalahDisplayDataView": (context) => AlsalahDisplayDataView(),
-        "WadawDisplayDataView": (context) => WadawDisplayDataView(),
-        "AzkarDisplayDataView": (context) => AzkarDisplayDataView(),
+        "Quran": (context) => const QuranDetailsView(),
+        'قران كريم': (context) => const ListAllSurahsView(),
+        'الصلاه': (context) => const AlsalahListView(),
+        'الاذكار': (context) => const AzkarListView(),
+        'الوضوء': (context) => const WadawListView(),
+        'اسماء الله الحسنى': (context) => const AsmaaAllaAlhsnaListView(),
+        "AlsalahDisplayDataView": (context) => const AlsalahDisplayDataView(),
+        "WadawDisplayDataView": (context) => const WadawDisplayDataView(),
+        "AzkarDisplayDataView": (context) => const AzkarDisplayDataView(),
         "AsmaaAllaAlhsnaDisplayDataView": (context) =>
-            AsmaaAllaAlhsnaDisplayDataView()
+            const AsmaaAllaAlhsnaDisplayDataView()
       },
       initialRoute: "SplashView",
       theme: ThemeData(

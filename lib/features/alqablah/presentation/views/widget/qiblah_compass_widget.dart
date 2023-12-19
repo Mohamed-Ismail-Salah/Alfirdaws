@@ -2,7 +2,6 @@ import 'dart:math' show pi;
 import 'package:flutter/material.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../../../core/resources_app/color_manager.dart';
 
 class QiblahCompassWidget extends StatelessWidget {
@@ -24,23 +23,18 @@ class QiblahCompassWidget extends StatelessWidget {
         var angle = ((qiblahDirection?.qiblah ?? 0) * (pi / 180) * -1);
 
         // if (_angle < 5 && _angle > -5) print('IN RANGE');
-
         return Stack(
           alignment: Alignment.center,
           children: <Widget>[
             Transform.rotate(
               angle: angle,
               child: SvgPicture.asset('assets/images/5.svg', // compass
-                  color: platformBrightness == Brightness.dark
-                      ? Colors.yellow
-                      : ColorManager.primary),
+                  color:  ColorManager.primary),
             ),
             _kaabaSvg,
             SvgPicture.asset(
               'assets/images/3.svg', //needle
-              color: platformBrightness == Brightness.dark
-                  ? Colors.yellow
-                  : ColorManager.primary,
+              color:   ColorManager.primary,
             ),
             const Align(
               alignment: Alignment.bottomCenter,

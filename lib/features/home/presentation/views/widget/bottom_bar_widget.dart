@@ -8,7 +8,6 @@ import '../../manger/home_cubit/home_cubit.dart';
 
 class BottomBarWidget extends StatelessWidget{
   const BottomBarWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
@@ -18,7 +17,7 @@ class BottomBarWidget extends StatelessWidget{
       onTap: (index) {
         BlocProvider.of<HomeCubit>(context).getBody(index);
       },
-      items: const <Widget>[
+      items: const  [
         Icon(
           Icons.compass_calibration,
           size: AppSize.s30,

@@ -11,7 +11,8 @@ class QuranDetailsView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: ColorManager.backgroundQuran,
         body: const SingleChildScrollView(
-            scrollDirection: Axis.vertical, child: QuranDetailsBody()),
+            scrollDirection: Axis.vertical,
+            child: QuranDetailsBody()),
       ),
     );
   }

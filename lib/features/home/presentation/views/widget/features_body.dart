@@ -12,9 +12,9 @@ class FeaturesBody extends StatelessWidget {
   Widget build(BuildContext context) {
     List pageTitleList = [
       'قران كريم',
-      'الصلا ه',
+      'الصلاه',
        'الوضوء',
-      'لاذكار',
+      'الاذكار',
       'اسماء الله الحسنى',
     ];
     List<String> img = [

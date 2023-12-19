@@ -1,7 +1,6 @@
 import 'package:alfirdaws/core/resources_app/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-
 import '../../../../../core/resources_app/assets_manager.dart';
 
 class AnimationImage extends StatelessWidget {

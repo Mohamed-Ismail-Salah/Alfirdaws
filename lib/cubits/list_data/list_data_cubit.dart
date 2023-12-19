@@ -25,9 +25,9 @@ void getlocation_datalist(){
   switch ( pageTitle ) {
     case'قران كريم': { location_datalist="assets/json/Quran.json";}
     break;
-    case 'لاذكار' : location_datalist="assets/json/azkar.json";
+    case 'الاذكار' : location_datalist="assets/json/azkar.json";
     break;
-    case 'الصلا ه' : location_datalist="assets/json/alsalah.json";
+    case 'الصلاه' : location_datalist="assets/json/alsalah.json";
     break;
     case  'الوضوء' : location_datalist="assets/json/alwudu.json";
     break;
